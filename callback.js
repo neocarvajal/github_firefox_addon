@@ -34,4 +34,6 @@ function start(oauth, client_id) {
 		var data = JSON.stringify({"client_id":"","password":"101010"});
 		xhr.send(data);
 	}
+
+	get_data();
 }
