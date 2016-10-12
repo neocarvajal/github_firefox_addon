@@ -8,11 +8,11 @@ function start(oauth_url, oauth_scope, client_id) {
 	
       var login = window.getElementById('access');
       login.click(function (){
-         window.open('oauth_url + oauth_scope+client_id');
+         window.open('oauth_url + oauth_scope + client_id');
       });
      
       window.addEventListener('message', function (event) {
-      var code = event.data;           
-      console.log(code);
+         var code = event.data;           
+         console.log(code);
       });
 }
