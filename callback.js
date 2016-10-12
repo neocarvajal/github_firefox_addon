@@ -6,8 +6,9 @@ function start(oauth, client_id) {
 	function get_data(){
 		// Sending a receiving data in JSON format using GET method		
 		xhr = new XMLHttpRequest();
+		var url = oauth+client_id;
 		//var url = "url?data=" + encodeURIComponent(JSON.stringify({"user":"","password":""}));
-		xhr.open("GET", oauth, true);
+		xhr.open("GET", url, true);
 		xhr.setRequestHeader("Content-type", "application/json");
 		xhr.onreadystatechange = function () { 
 		    if (xhr.readyState == 4 && xhr.status == 200) {
