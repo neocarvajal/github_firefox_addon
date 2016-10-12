@@ -15,7 +15,7 @@ function start(oauth, client_id) {
 		        console.log(json.client_id + ", " + json.user + ", " + json.password)
 		    }
 		}
-		return xhr.send();
+		xhr.send();
 	}
 
 /*	function send_data(){
