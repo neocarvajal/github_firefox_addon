@@ -1,4 +1,4 @@
-var OAUTH_URL = "https://github.com/login/oauth/authorize?scope=user:email&&client_id=";
+var OAUTH_URL = "https://github.com/login/oauth/authorize?scope=user:email&client_id=";
 var CLIENT_ID = "4ad89144980ebf7ce5f7";
 
 function start(oauth, client_id) {
