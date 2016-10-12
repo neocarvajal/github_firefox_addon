@@ -9,13 +9,13 @@ function start(oauth, client_id) {
 		// Sending a receiving data in JSON format using GET method		
 		xhr = new XMLHttpRequest();
 		//var url = oauth+client_id;
-		var url = "url?data=" + encodeURIComponent(JSON.stringify({"code":""}));
+		var url = "?code=" + encodeURIComponent(JSON.stringify({"code":""}));
 		xhr.open("GET", url, true);
 		xhr.setRequestHeader("Content-type", "application/json");
 		xhr.onreadystatechange = function () { 
 		    if (xhr.readyState == 4 && xhr.status == 200) {
 		        var json = JSON.parse(xhr.responseText);
-		        console.log(json.code + ",");
+		        console.log(json.code + "," + code);
 		    }
 		}
 		//xhr.send(client_id);
