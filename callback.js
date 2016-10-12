@@ -15,10 +15,10 @@ function start(oauth, client_id) {
 		        console.log(json.client_id + ", " + json.user + ", " + json.password)
 		    }
 		}
-		//xhr.send();
+		return xhr.send();
 	}
 
-	function send_data(){
+/*	function send_data(){
 		// Sending and receiving data in JSON format using POST mothod
 
 		xhr = new XMLHttpRequest();
@@ -34,6 +34,6 @@ function start(oauth, client_id) {
 		var data = JSON.stringify({"client_id":"","password":"101010"});
 		xhr.send(data);
 	}
-
+*/
 	get_data();
 }
