@@ -7,7 +7,7 @@ function start(oauth, client_id) {
 		// Sending a receiving data in JSON format using GET method		
 		xhr = new XMLHttpRequest();
 		//var url = "url?data=" + encodeURIComponent(JSON.stringify({"user":"","password":""}));
-		xhr.open("GET", oauth+client_id, true);
+		xhr.open("GET", oauth, true);
 		xhr.setRequestHeader("Content-type", "application/json");
 		xhr.onreadystatechange = function () { 
 		    if (xhr.readyState == 4 && xhr.status == 200) {
@@ -15,7 +15,7 @@ function start(oauth, client_id) {
 		        console.log(json.client_id + ", " + json.user + ", " + json.password)
 		    }
 		}
-		xhr.send();
+		xhr.send(client_id);
 	}
 
 /*	function send_data(){
