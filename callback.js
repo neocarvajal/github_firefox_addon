@@ -15,7 +15,7 @@ function main(oauth_url, oauth_scope, client_id) {
       var window_features 
 ="location=no,menubar=no,status=no,dialog=no,width=420,height=230,resizable,scrollbars=yes";
       var auth = window.open(url, 'auth_github', window_features);
-      window.addEventListener('message',function (event) {
+      window.addEventListener('message',function (auth) {
          var code = auth.data;
          console.log(code);
          alert(code);
