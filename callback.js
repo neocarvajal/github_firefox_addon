@@ -23,3 +23,8 @@ function main(oauth_url, oauth_scope, client_id) {
       
    });
 }
+
+// Window post message
+// var code = window.location.toString().replace(/.+code=/, '');
+// window.opener.postMessage(code, window.location);
+//window.close();
