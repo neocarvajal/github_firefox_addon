@@ -8,9 +8,8 @@ window.onload = function() {
 
 function init(oauth_url, oauth_scope, client_id) {   
 
-   var url = oauth_url + oauth_scope + client_id;
    var login = document.getElementById('access');
-   console.log(login.value);
+   var url = "oauth_url + oauth_scope + client_id";
    login.onclick = function(url){
       console.log(url);
       window.open(url);
