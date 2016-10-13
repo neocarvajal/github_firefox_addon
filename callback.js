@@ -12,7 +12,8 @@ function main(oauth_url, oauth_scope, client_id) {
    button.addEventListener("click", function(e){
       var url = oauth_url + oauth_scope + client_id;
       console.log("visited " + url);
-      var auth = window.open(url, 'auth_github');
+      var window_features = "location=no,menubar=no,status=yes";
+      var auth = window.open(url, 'auth_github', window_features);
       window.addEventListener('message',function (event) {
          var code = auth.data;
          console.log(code);
