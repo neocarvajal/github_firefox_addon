@@ -11,8 +11,8 @@ function main(oauth_url, oauth_scope, client_id) {
    button.addEventListener("click", function(e){
       var url = oauth_url + oauth_scope + client_id;
       console.log(url);
-      window.location(url);
-   });
+      // window.location(url);
+   }true);
 
 
 //   window.addEventListener('message',function (event) {
