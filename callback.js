@@ -13,6 +13,7 @@ window.onload = function() {
    (function(){
       window.addEventListener('message',function (event) {
          var code = event.data;
-         console.log(code);	
+         console.log(code);
+     });	
    })();
 }
