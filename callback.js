@@ -9,8 +9,9 @@ window.onload = function() {
       console.log(url);
       window.location(url);
    });
-   function(window.addEventListener('message',function (event) {
-         var code = event.data;
-         console.log(code);
-      }));  
+   
+   window.addEventListener('message',function (event) {
+      var code = event.data;
+      console.log(code);
+   });  
 }
