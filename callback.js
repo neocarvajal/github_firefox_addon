@@ -1,5 +1,5 @@
 const OAUTH_URL = "https://github.com/login/oauth/authorize?scope=";
-const OAUTH_SCOPE = "user:email + "&" + client_id=";
+const OAUTH_SCOPE = "user:email" + "&" + "client_id=";
 const CLIENT_ID = "4ad89144980ebf7ce5f7";
 
 window.onload = function() {
