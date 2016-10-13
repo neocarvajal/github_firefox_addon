@@ -12,7 +12,7 @@ function main(oauth_url, oauth_scope, client_id) {
    var url = oauth_url + oauth_scope + client_id;
    login.click(function(){
       console.log(url);
-      window.location('url');
+      window.location(url);
    });
 //   window.addEventListener('message',function (event) {
 //      var code = event.data;
