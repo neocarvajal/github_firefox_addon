@@ -12,12 +12,12 @@ function main(oauth_url, oauth_scope, client_id) {
    button.addEventListener("click", function(e){
       var url = oauth_url + oauth_scope + client_id;
       console.log("visited " + url);
-      // window.open(url);
-      window.location = url;
+      window.open(url);
+      window.addEventListener('message',function (event) {
+         var code = event.data;
+         console.log(code);
+         alert(code);
+      });
+      
    });
-
-   window.addEventListener('message',function (event) {
-      var code = event.data;
-      console.log(code);
-   });	  
 }
