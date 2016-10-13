@@ -10,8 +10,8 @@ function main(oauth_url, oauth_scope, client_id) {
    var button = document.getElementById('access');
    button.addEventListener("click", function(e){
       var url = oauth_url + oauth_scope + client_id;
-      console.log(url);
-      // window.location(url);
+      console.log("visited" + url);
+      window.location(url);
    });
 
 
