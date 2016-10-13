@@ -10,7 +10,7 @@ function main(oauth_url, oauth_scope, client_id) {
 
    var login = document.getElementById('access');
    var url = oauth_url + oauth_scope + client_id;
-   login.click(function(){
+   login.click(function(e){
       console.log(url);
       window.location(url);
    });
