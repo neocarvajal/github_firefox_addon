@@ -10,6 +10,7 @@ function init(oauth_url, oauth_scope, client_id) {
 
    var url = OAUTH_URL + OAUTH_SCOPE + CLIENT_ID;
    var login = document.getElementById('access');
+   console.log(login.value);
    login.onclick = function(url){
       console.log(url);
       window.open(url);
