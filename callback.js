@@ -6,14 +6,15 @@ window.onload = function() {
    main(OAUTH_URL, OAUTH_SCOPE, CLIENT_ID);
 }
 
-function main(oauth_url, oauth_scope, client_id) {   
-
-   var login = document.getElementById('access');
-   var url = oauth_url + oauth_scope + client_id;
-   login.click(function(e){
+function main(oauth_url, oauth_scope, client_id) {
+   var button = document.getElementById('access');
+   button.addEventListener("click", function(e){
+      var url = oauth_url + oauth_scope + client_id;
       console.log(url);
       window.location(url);
    });
+
+
 //   window.addEventListener('message',function (event) {
 //      var code = event.data;
 //      console.log(code);
