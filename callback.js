@@ -7,6 +7,7 @@ window.onload = function() {
 }
 
 function main(oauth_url, oauth_scope, client_id) {
+   
    var button = document.getElementById('access');
    button.addEventListener("click", function(e){
       var url = oauth_url + oauth_scope + client_id;
@@ -14,9 +15,8 @@ function main(oauth_url, oauth_scope, client_id) {
       window.open(url);
    });
 
-
-//   window.addEventListener('message',function (event) {
-//      var code = event.data;
-//      console.log(code);
-//   });	  
+   window.addEventListener('message',function (event) {
+      var code = event.data;
+      console.log(code);
+   });	  
 }
