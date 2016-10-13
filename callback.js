@@ -14,8 +14,8 @@ function init(oauth_url, oauth_scope, client_id) {
       console.log(url);
       window.open(url);
    }
-   window.addEventListener('message',function (event) {
-      var code = event.data;
-      console.log(code);
-   });	  
+//   window.addEventListener('message',function (event) {
+//      var code = event.data;
+//      console.log(code);
+//   });	  
 }
