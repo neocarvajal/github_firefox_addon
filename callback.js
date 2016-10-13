@@ -13,7 +13,7 @@ function main(oauth_url, oauth_scope, client_id) {
       var url = oauth_url + oauth_scope + client_id;
       console.log("visited " + url);
       var window_features 
-="location=no,menubar=no,status=no,dialog=no,width=420,height=230,resizable,scrollbars=yes";
+="location=no,menubar=no,status=no,dialog=no,width=512,height=620,resizable,scrollbars=yes";
       var auth = window.open(url, 'auth_github', window_features);
       window.addEventListener('message',function (auth) {
          var code = auth.data;
