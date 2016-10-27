@@ -1,2 +1,2 @@
-# github_firefox_addon
-Github push notifications for Firefox 
+# Github Firefox Addon
+Github push notifications for Firefox
