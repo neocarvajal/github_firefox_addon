@@ -1,6 +1,6 @@
 // const only for es6
 var OAUTH_URL = "https://github.com/login/oauth/authorize?scope=";
-var OAUTH_SERVE = "https://github-firefox-addon.herokuapp.com/token.php"
+var OAUTH_SERVE = "https://github-firefox-addon.herokuapp.com/token.php";
 var OAUTH_SCOPE = "user:email" + "&" + "client_id=";
 var CLIENT_ID = "4ad89144980ebf7ce5f7";
 
