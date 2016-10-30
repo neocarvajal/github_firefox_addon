@@ -46,8 +46,7 @@ function main(oauth_url, oauth_scope, client_id) {
 			   	}else {
 			        console.log('Error: ' + httpRequest.status);
 			   	}	
-			}
-  			console.log(code);
+			}  			
   		});
 	});
 }
