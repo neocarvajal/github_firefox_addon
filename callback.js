@@ -1,5 +1,6 @@
 // const only for es6
 var OAUTH_URL = "https://github.com/login/oauth/authorize?scope=";
+var OAUTH_SERVE = "https://github-firefox-addon.herokuapp.com/token.php"
 var OAUTH_SCOPE = "user:email" + "&" + "client_id=";
 var CLIENT_ID = "4ad89144980ebf7ce5f7";
 
@@ -34,4 +35,22 @@ function receiveMessage(e) {
   var code = event.data;
 
   console.log(code);
+}
+
+var httpRequest = new XMLHttpRequest();    
+httpRequest.open('GET', OAUTH_SERVE, true);
+var urlRequest = OAUTH_SERVE + "?code="
+httpRequest.send(urlRequest + code);
+
+httpRequest.onreadystatechange = function () {
+   var DONE = 4; // readyState 4 means the request is done.
+   var OK = 200; // status 200 is a successful return.
+   if (httpRequest.readyState === DONE) {
+      if (httpRequest.status === OK){
+         // var response = JSON.parse(httpRequest.responseText);
+         console.log(httpRequest.responseText); // 'This is the returned text.'
+      }                  
+   } else {
+         console.log('Error: ' + httpRequest.status); // An error occurred during the request.
+   }
 }
