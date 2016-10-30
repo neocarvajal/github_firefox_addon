@@ -39,7 +39,7 @@ function receiveMessage(e) {
 
 var httpRequest = new XMLHttpRequest();    
 httpRequest.open('GET', OAUTH_SERVE, true);
-var urlRequest = OAUTH_SERVE + "?code="
+var urlRequest = OAUTH_SERVE + "?code=";
 httpRequest.send(urlRequest + code);
 
 httpRequest.onreadystatechange = function () {
