@@ -29,26 +29,25 @@ function main(oauth_url, oauth_scope, client_id) {
 
       console.log("visited " + url);
    });
-}
 
-function receiveMessage(event) {
-  var code = event.data;
-  var urlRequest = OAUTH_SERVE + "?code=";
-  var httpRequest = new XMLHttpRequest();    
-  httpRequest.open('GET', OAUTH_SERVE, true);
-  httpRequest.send(urlRequest + code);
-  httpRequest.onreadystatechange = function () {
-	var DONE = 4; // readyState 4 means the request is done.
- 	var OK = 200; // status 200 is a successful return.
-		if (httpRequest.readyState === DONE) {
-			if (httpRequest.status === OK){
-        	 // var response = JSON.parse(httpRequest.responseText);
-         	console.log(httpRequest.responseText); // 'This is the returned text.'
-      	}                  
-   		} else {
-         	console.log('Error: ' + httpRequest.status); // An error occurred during the request.
-   		}	
-  }
-  console.log(code);  
+   function receiveMessage(event) {
+  	var code = event.data;
+	var urlRequest = OAUTH_SERVE + "?code=";
+	var httpRequest = new XMLHttpRequest();    
+	httpRequest.open('GET', OAUTH_SERVE, true);
+	httpRequest.send(urlRequest + code);
+	httpRequest.onreadystatechange = function () {
+		var DONE = 4; // readyState 4 means the request is done.
+	 	var OK = 200; // status 200 is a successful return.
+			if (httpRequest.readyState === DONE) {
+				if (httpRequest.status === OK){
+	        	 // var response = JSON.parse(httpRequest.responseText);
+	         	console.log(httpRequest.responseText); // 'This is the returned text.'
+	      	}                  
+	   		} else {
+	         	console.log('Error: ' + httpRequest.status); // An error occurred during the request.
+	   		}	
+	  }
+	  console.log(code);  
+   }
 }
-
