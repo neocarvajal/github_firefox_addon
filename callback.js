@@ -33,8 +33,8 @@ function main(oauth_url, oauth_scope, client_id) {
 			var urlRequest = OAUTH_SERVE + "?code=";
 			var httpRequest = new XMLHttpRequest();    
 			httpRequest.open('GET', OAUTH_SERVE, true);
-			httpRequest.withCredentials = true;
-    		httpRequest.onreadystatechange = handler;
+			
+    		
 			httpRequest.send(urlRequest + code);
 			
 			httpRequest.onreadystatechange = function () {

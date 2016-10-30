@@ -12,11 +12,9 @@
 </head>
 
 <body>
-
-<!-- <script defer src="callback.js"></script> -->
 <script>
    var code = window.location.toString().replace(/.+code=/, '');
-
+   console.log('Sending code ' + code + ' to app');
    if(window.opener) {
      window.opener.postMessage(code, window.location);
      window.close();
