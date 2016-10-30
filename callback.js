@@ -9,9 +9,9 @@ window.onload = function() {
 }
 
 function main(oauth_url, oauth_scope, client_id) {
-   var button = document.getElementById('access');
-
-   var windowFeatures = "location=no," +
+	var button = document.getElementById('access');
+	
+	var windowFeatures = "location=no," +
                          "menubar=no," +
                          "status=no," +
                          "dialog=no," +
@@ -19,7 +19,7 @@ function main(oauth_url, oauth_scope, client_id) {
                          "height=620," +
                          "resizable," +
                          "scrollbars=yes";
-
+	
 	button.addEventListener("click", function(event) {
 		var url = oauth_url + oauth_scope + client_id;
 		var auth = window.open(url, 'auth_github', windowFeatures);
@@ -28,17 +28,18 @@ function main(oauth_url, oauth_scope, client_id) {
 		window.addEventListener('message',function (event) {
 			var code = event.data;
 			console.log(code);
-// window.removeEventListener('message', receiveMessage);
+			// window.removeEventListener('message', receiveMessage);
 
 			var urlRequest = OAUTH_SERVE + "?code=";
 			var httpRequest = new XMLHttpRequest();    
 			httpRequest.open('GET', OAUTH_SERVE, true);
 			httpRequest.send(urlRequest + code);
+			
 			httpRequest.onreadystatechange = function () {
 				var DONE = 4; 
 			 	var OK = 200; 
 				if (httpRequest.readyState === DONE) {
-					if (httpRequest.status === OK){
+					if (httpRequest.status === OK) {
 			       		var response = JSON.parse(httpRequest.responseText);
 			       		console.log(response); 
 			     	}                  
@@ -48,5 +49,5 @@ function main(oauth_url, oauth_scope, client_id) {
 			}
   			console.log(code);
   		});
-	}
+	});
 }
