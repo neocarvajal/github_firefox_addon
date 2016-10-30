@@ -20,34 +20,33 @@ function main(oauth_url, oauth_scope, client_id) {
                          "resizable," +
                          "scrollbars=yes";
 
-   button.addEventListener("click", function(event) {
-      var url = oauth_url + oauth_scope + client_id;
-      var auth = window.open(url, 'auth_github', windowFeatures);
-      
-      window.addEventListener('message', receiveMessage);
-      window.removeEventListener('message', receiveMessage);
+	button.addEventListener("click", function(event) {
+		var url = oauth_url + oauth_scope + client_id;
+		var auth = window.open(url, 'auth_github', windowFeatures);
+		console.log("visited " + url);
 
-      console.log("visited " + url);
-   });
+		window.addEventListener('message',function (event) {
+			var code = event.data;
+			console.log(code);
+// window.removeEventListener('message', receiveMessage);
 
-   function receiveMessage(event) {
-  	var code = event.data;
-	var urlRequest = OAUTH_SERVE + "?code=";
-	var httpRequest = new XMLHttpRequest();    
-	httpRequest.open('GET', OAUTH_SERVE, true);
-	httpRequest.send(urlRequest + code);
-	httpRequest.onreadystatechange = function () {
-		var DONE = 4; 
-	 	var OK = 200; 
-			if (httpRequest.readyState === DONE) {
-				if (httpRequest.status === OK){
-	        		var response = JSON.parse(httpRequest.responseText);
-	         		console.log(response); 
-	      		}                  
-	   		} else {
-	         	console.log('Error: ' + httpRequest.status);
-	   		}	
-	  }
-	  console.log(code);  
-   }
+			var urlRequest = OAUTH_SERVE + "?code=";
+			var httpRequest = new XMLHttpRequest();    
+			httpRequest.open('GET', OAUTH_SERVE, true);
+			httpRequest.send(urlRequest + code);
+			httpRequest.onreadystatechange = function () {
+				var DONE = 4; 
+			 	var OK = 200; 
+				if (httpRequest.readyState === DONE) {
+					if (httpRequest.status === OK){
+			       		var response = JSON.parse(httpRequest.responseText);
+			       		console.log(response); 
+			     	}                  
+			   	}else {
+			        console.log('Error: ' + httpRequest.status);
+			   	}	
+			}
+  			console.log(code);
+  		});
+	}
 }
