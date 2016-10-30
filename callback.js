@@ -37,15 +37,15 @@ function main(oauth_url, oauth_scope, client_id) {
 	httpRequest.open('GET', OAUTH_SERVE, true);
 	httpRequest.send(urlRequest + code);
 	httpRequest.onreadystatechange = function () {
-		var DONE = 4; // readyState 4 means the request is done.
-	 	var OK = 200; // status 200 is a successful return.
+		var DONE = 4; 
+	 	var OK = 200; 
 			if (httpRequest.readyState === DONE) {
 				if (httpRequest.status === OK){
-	        	 // var response = JSON.parse(httpRequest.responseText);
-	         	console.log(httpRequest.responseText); // 'This is the returned text.'
-	      	}                  
+	        		var response = JSON.parse(httpRequest.responseText);
+	         		console.log(response); 
+	      		}                  
 	   		} else {
-	         	console.log('Error: ' + httpRequest.status); // An error occurred during the request.
+	         	console.log('Error: ' + httpRequest.status);
 	   		}	
 	  }
 	  console.log(code);  
