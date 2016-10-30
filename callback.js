@@ -20,21 +20,21 @@ function main(oauth_url, oauth_scope, client_id) {
                          "resizable," +
                          "scrollbars=yes";
 
-   button.addEventListener("click", function(e) {
+   button.addEventListener("click", function(event) {
       var url = oauth_url + oauth_scope + client_id;
       var auth = window.open(url, 'auth_github', windowFeatures);
-
-      window.removeEventListener('message', receiveMessage);
+      
       window.addEventListener('message', receiveMessage);
 
       console.log("visited " + url);
    });
 }
 
-function receiveMessage(e) {
+function receiveMessage(event) {
   var code = event.data;
 
   console.log(code);
+  window.removeEventListener('message', receiveMessage);
 }
 
 var httpRequest = new XMLHttpRequest();    
