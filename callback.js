@@ -25,6 +25,7 @@ function main(oauth_url, oauth_scope, client_id) {
       var auth = window.open(url, 'auth_github', windowFeatures);
       
       window.addEventListener('message', receiveMessage);
+      window.removeEventListener('message', receiveMessage);
 
       console.log("visited " + url);
    });
@@ -34,7 +35,7 @@ function receiveMessage(event) {
   var code = event.data;
 
   console.log(code);
-  window.removeEventListener('message', receiveMessage);
+  
 }
 
 var httpRequest = new XMLHttpRequest();    
