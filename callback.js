@@ -21,22 +21,23 @@ function main(oauth_url, oauth_scope, client_id) {
                          "scrollbars=yes";
 	
 	button.addEventListener("click", function(event) {
-		var url = oauth_url + oauth_scope + client_id;
+		var url = oauth_url + oauth_scope + client_id;        
 		var auth = window.open(url, 'auth_github', windowFeatures);
 		console.log("visited " + url);
 
 		window.addEventListener('message',function (event) {
-			var code = event.data;
-			console.log(code);
-			// window.removeEventListener('message', receiveMessage);
-
-			makeCorsRequest();
-
-			var httpRequest = new XMLHttpRequest();    
-			httpRequest.open('GET', OAUTH_SERVE, true);
-			httpRequest.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
-			httpRequest.send(urlRequest + code);
 			
+            var code = event.data;
+			
+            console.log(code);
+            
+			// window.removeEventListener('message', receiveMessage);	
+
+			var httpRequest = new XMLHttpRequest();
+             
+			httpRequest.open('GET', OAUTH_SERVE, true);
+            httpRequest.send(URL_REQUEST + code);
+            		
 			httpRequest.onreadystatechange = function () {
 				var DONE = 4; 
 			 	var OK = 200; 
